@@ -2,9 +2,88 @@
   "movies": [
     {
       "id": 1,
-      "title": "Shrek",
+      "title": "Juice",
       "rating": 5,
-      "movieSummary": ""
+      "movieSummary": "Four Harlem friends Bishop, Q, Steel and Raheem  dabble in petty crime, but they decide to go big by knocking off a convenience store. Bishop, the magnetic leader of the group, has the gun. But Q has different aspirations. He wants to be a DJ and happens to have a gig the night of the robbery. Unfortunately for him, Bishop isn't willing to take no for answer in a game where everything's for keeps."
+    },
+    {
+      "id": 2,
+      "title": "Life",
+      "rating": 5,
+      "movieSummary": "During Prohibition, loudmouth Harlem grifter Ray (Eddie Murphy) and the no-nonsense Claude (Martin Lawrence) team up on a bootlegging mission to Mississippi that could bring them big bucks. But they run into trouble when a crooked lawman hits them with a phony murder charge. Ray and Claude are given life sentences and shipped off to jail, where they must think of a way to prove their innocence and avoid the brutal guards while battling their biggest enemies -- their opposing personalities."
+    },
+    {
+      "id": 3,
+      "title": "Training Day",
+      "rating": "4",
+      "movieSummary": "Police drama about a veteran officer who escorts a rookie on his first day with the LAPD's tough inner-city narcotics unit."
+
+    },
+    {
+      "id": 4,
+      "title": "Lion King ",
+      "rating": "1",
+      "movieSummary": "This Disney animated feature follows the adventures of the young lion Simba the heir of his father, Mufasa. Simba's wicked uncle, Scar, plots to usurp Mufasa's throne by luring father and son into a stampede of wildebeests. But Simba escapes, and only Mufasa is killed. Simba returns as an adult to take back his homeland from Scar with the help of his friends Timon and Pumbaa."
+
+    },
+    {
+      "id": 5,
+      "title": "Boyz n The Hood",
+      "rating": "2",
+      "movieSummary": "Tre is sent to live with his father, Furious Styles, in tough South Central Los Angeles. Although his hard-nosed father instills proper values and respect in him, and his devout girlfriend Brandi teaches him about faith, Tre's friends Doughboy and Ricky don't have the same kind of support and are drawn into the neighborhood's booming drug and gang culture, with increasingly tragic results."
+
+    },
+    {
+      "id": 6,
+      "title": "The Five HeartBeats",
+      "rating": "3",
+      "movieSummary": "Coming in on the tail end of a rhythm and blues singing group explosion, The Five Heartbeats rise and fall within the space of seven years. Along the way, the group deals with all manner of fame and fortune distractions jealousy, greed, too much womanizing and drugs all take a toll. Their troubles culminate when executive Big Red is arrested for the murder of manager Jimmy Potter."
+
+    },
+    {
+      "id": 7,
+      "title": "na",
+      "rating": "na",
+      "movieSummary":""
+
+    },
+    {
+      "id": 8,
+      "title": "fd",
+      "rating": "ffd",
+      "movieSummary":""
+
+    },
+    {
+      "id": 9,
+      "title": "fedsd",
+      "rating": "fsd",
+      "movieSummary":""
+
+    },
+    {
+      "id": 10,
+      "title": "sd",
+      "rating": "d",
+      "movieSummary":""
+
+    },
+    {
+      "id": 11,
+      "title": "d",
+      "rating": "d",
+      "movieSummary":""
+
+    },
+    {
+      "id": 12,
+      "title": "asd",
+      "rating": "asd",
+      "movieSummary":""
+
     }
+
   ]
+
 }
+
