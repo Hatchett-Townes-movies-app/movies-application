@@ -87,5 +87,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function displayMovies(movieData) {
     var movieListDiv = document.getElementById("movieList");
-}
 
+    // Clear existing content
+    movieListDiv.innerHTML = "";
+
+    // Loop through each movie in the data
+    movieData.forEach(movie => {
+        // Create a div element for each movie
+        var movieDiv = document.createElement("div");
+        movieDiv.classList.add("movie");
+
+        // Create elements for title, rating, and summary
+        var titleElement = document.createElement("h2");
+        titleElement.textContent = movie.title;
+
+        var ratingElement = document.createElement("p");
+        ratingElement.textContent = "Rating: " + movie.rating;
+
+        var summaryElement = document.createElement("p");
+        summaryElement.textContent = movie.summary;
+
+        // Append elements to the movie div
+        movieDiv.appendChild(titleElement);
+        movieDiv.appendChild(ratingElement);
+        movieDiv.appendChild(summaryElement);
+
+        // Append the movie div to the movieListDiv
+        movieListDiv.appendChild(movieDiv);
+    });
+}
