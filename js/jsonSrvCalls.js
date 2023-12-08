@@ -11,7 +11,6 @@ async function jsonGetAll(){
 
 // json get
 async function jsonGet(urlStr) {
-
     let url = urlStr;
     let options = {
         method: 'GET',
@@ -27,8 +26,6 @@ async function jsonGet(urlStr) {
 
 // json put
 async function jsonPut(movieObj, movieId) {
-    console.log("json put: ", movieObj);
-
     let url = `${urlMovieDb}/${movieId}`;
     try {
         const options = {
@@ -49,8 +46,6 @@ async function jsonPut(movieObj, movieId) {
 
 // json post
 async function jsonPost(movieObj) {
-    console.log("json post: ", movieObj);
-
     let url = urlMovieDb;
     try {
         const options = {

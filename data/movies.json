@@ -9,7 +9,7 @@
     },
     {
       "id": 2,
-      "posterUrl":"https://image.tmdb.org/t/p/original/saWYpX3ADdmdByQZVrSYUNbQ9GC.jpg",
+      "posterUrl": "https://image.tmdb.org/t/p/original/saWYpX3ADdmdByQZVrSYUNbQ9GC.jpg",
       "title": "Life",
       "rating": 5,
       "movieSummary": "Two men in 1930s Mississippi become friends after being sentenced to life in prison together for a crime they did not commit."
@@ -20,7 +20,6 @@
       "title": "Training Day",
       "rating": "4",
       "movieSummary": "On his first day on the job as a narcotics officer, a rookie cop works with a rogue detective who isn't what he appears."
-
     },
     {
       "id": 4,
@@ -28,7 +27,6 @@
       "title": "The Lion King ",
       "rating": "1",
       "movieSummary": "This Disney animated feature follows the adventures of the young lion Simba the heir of his father, Mufasa. Simba's wicked uncle, Scar, plots to usurp Mufasa's throne by luring father and son into a stampede of wildebeests. But Simba escapes, and only Mufasa is killed. Simba returns as an adult to take back his homeland from Scar with the help of his friends Timon and Pumbaa."
-
     },
     {
       "id": 5,
@@ -36,7 +34,6 @@
       "title": "Boyz n The Hood",
       "rating": "2",
       "movieSummary": "Tre is sent to live with his father, Furious Styles, in tough South Central Los Angeles. Although his hard-nosed father instills proper values and respect in him, and his devout girlfriend Brandi teaches him about faith, Tre's friends Doughboy and Ricky don't have the same kind of support and are drawn into the neighborhood's booming drug and gang culture, with increasingly tragic results."
-
     },
     {
       "id": 6,
@@ -44,58 +41,55 @@
       "title": "Sing",
       "rating": "3",
       "movieSummary": "Coming in on the tail end of a rhythm and blues singing group explosion, The Five Heartbeats rise and fall within the space of seven years. Along the way, the group deals with all manner of fame and fortune distractions jealousy, greed, too much womanizing and drugs all take a toll. Their troubles culminate when executive Big Red is arrested for the murder of manager Jimmy Potter."
-
     },
     {
       "id": 7,
-      "posterUrl":  "https://image.tmdb.org/t/p/original//oZRVDpNtmHk8M1VYy1aeOWUXgbC.jpg",
+      "posterUrl": "https://image.tmdb.org/t/p/original//oZRVDpNtmHk8M1VYy1aeOWUXgbC.jpg",
       "title": "Terminator Genisys ",
       "rating": "4",
       "movieSummary": "The year is 2029. John Connor, leader of the resistance continues the war against the machines. At the Los Angeles offensive, John's fears of the unknown future begin to emerge when TECOM spies reveal a new plot by SkyNet that will attack him from both fronts; past and future, and will ultimately change warfare forever."
-
     },
     {
       "id": 8,
       "posterUrl": "https://image.tmdb.org/t/p/original//fKe9y1AJHEzoiHwSrjfwyinuCE8.jpg",
       "title": "Rocky",
       "rating": "3",
-      "movieSummary":"An uneducated collector for a Philadelphia loan shark is given a once-in-a-lifetime opportunity to fight against the world heavyweight boxing champion."
-
+      "movieSummary": "An uneducated collector for a Philadelphia loan shark is given a once-in-a-lifetime opportunity to fight against the world heavyweight boxing champion."
     },
     {
       "id": 9,
       "posterUrl": "https://image.tmdb.org/t/p/original//6a2HY6UmD7XiDD3NokgaBAXEsD2.jpg",
       "title": "King Kong",
       "rating": "1",
-      "movieSummary":"In 1933 New York, an overly ambitious movie producer coerces his cast and hired ship crew to travel to mysterious Skull Island, where they encounter Kong, a giant ape who is immediately smitten with the leading lady."
-
+      "movieSummary": "In 1933 New York, an overly ambitious movie producer coerces his cast and hired ship crew to travel to mysterious Skull Island, where they encounter Kong, a giant ape who is immediately smitten with the leading lady."
     },
     {
       "id": 10,
       "posterUrl": "https://image.tmdb.org/t/p/original//arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
       "title": "Forrest Gump",
       "rating": "2",
-      "movieSummary":"A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him."
-
+      "movieSummary": "A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him."
     },
     {
       "id": 11,
       "posterUrl": "https://image.tmdb.org/t/p/original//ttryglcY2osWZE3sRYBf3ewTZsW.jpg",
       "title": "Mortal Kombat: Annihilation (1997)",
       "rating": "2",
-      "movieSummary":"A group of heroic warriors has only six days to save the planet in Mortal Kombat Annihilation. To succeed they must survive the most spectacular series of challenges any human, or god, has ever encountered as they battle an evil warlord bent on taking control of Earth."
-
+      "movieSummary": "A group of heroic warriors has only six days to save the planet in Mortal Kombat Annihilation. To succeed they must survive the most spectacular series of challenges any human, or god, has ever encountered as they battle an evil warlord bent on taking control of Earth."
     },
     {
       "id": 12,
-      "posterUrl":"https://image.tmdb.org/t/p/original//xIGhgcLtzzTON56G905I5tuwNQM.jpg",
+      "posterUrl": "https://image.tmdb.org/t/p/original//xIGhgcLtzzTON56G905I5tuwNQM.jpg",
       "title": "The Jungle Book (2016)",
       "rating": "4",
-      "movieSummary":"A man-cub named Mowgli fostered by wolves. After a threat from the tiger Shere Khan, Mowgli is forced to flee the jungle, by which he embarks on a journey of self discovery with the help of the panther, Bagheera and the free-spirited bear, Baloo."
-
+      "movieSummary": "A man-cub named Mowgli fostered by wolves. After a threat from the tiger Shere Khan, Mowgli is forced to flee the jungle, by which he embarks on a journey of self discovery with the help of the panther, Bagheera and the free-spirited bear, Baloo."
+    },
+    {
+      "id": 13,
+      "title": "The Good, the Bad and the Ugly",
+      "movieSummary": "While the Civil War rages on between the Union and the Confederacy, three men – a quiet loner, a ruthless hitman, and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
+      "posterUrl": "https://www.themoviedb.org/t/p/w1280/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
+      "rating": 4
     }
-
   ]
-
 }
-
