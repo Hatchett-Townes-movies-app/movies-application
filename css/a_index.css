@@ -6,10 +6,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
-/* nav section */
-
-
 .navbar {
     background-color: darkblue;
 }
@@ -22,19 +18,11 @@ body {
     color: lightseagreen;
 }
 
-.navbar-brand:hover {
-    color: lightseagreen;
-}
-
 #addMovie {
     background-color: lightseagreen;
     color: white;
     font-size: .80rem;
 }
-
-
-/* heading section */
-
 
 #heading-div {
     position: relative;
@@ -70,75 +58,29 @@ body {
     color: white;
 }
 
-.spinner-border {
-    display: inline-flex;
-}
-
-.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s, visibility 0.5s;
-}
-
-
-/* poster section */
-
-
 #poster-div {
-    background-color: rgb(235, 245, 250);
+    background-color: rgb(240, 245, 250);
 }
 
 .card {
-    width: 13rem;
     margin: 0.5rem;
     border-color: darkblue;
     border-width: 1px;
 }
 
-#image-container {
-    position: relative;
-    display: inline-block;
-}
-
-#image-container img {
-    height: 250px;
+.card img {
+    height: 325px;
     object-fit: cover;
 }
 
-.bi-info-circle {
-    position: absolute;
-    top: -5px;
-    left: 11rem;
-    color: lightblue;
-    font-size: 1.75rem;
+.card-body #btnEdit {
+    background-color: lightseagreen;
+    color: white;
 }
 
-.bi-info-circle:hover {
-    cursor: pointer;
-}
-
-#btnEdit {
-    color: green;
-    font-size: 1.1rem;
-}
-
-#btnDelete{
-    color: red;
-    font-size: 1.1rem;
-}
-
-.bi-star-fill {
-    color: lightgray;
-}
-
-.goldStar {
-    color: gold;
+.card-body #btnDelete{
+    background-color: red;
+    color: white;
 }
 
 
-/* modal section */
-
-
-#modalStars {
-    font-size: 1.5rem;
-}

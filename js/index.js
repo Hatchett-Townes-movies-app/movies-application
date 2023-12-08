@@ -1,118 +1,95 @@
 "use strict";
 
-// https://image.tmdb.org/t/p/original/hZkgoQYus5vegHoetLkCJzb17zJ.jpg
-// https://image.tmdb.org/t/p/original/oZRVDpNtmHk8M1VYy1aeOWUXgbC.jpg
-// https://image.tmdb.org/t/p/original/5M0j0B18abtBI5gi2RhfjjurTqb.jpg
+import * as jsonSrvCalls from "./jsonSrvCalls.js";
+import * as posterClicks from "./posterClicks.js";
+import * as movieModal from "./movieModal.js";
 
-function addMovie() {
-    // Get form data
-    const title = document.getElementById('title').value;
-    const rating = document.getElementById('rating').value;
-    const summary = document.getElementById('summary').value;
 
-    // Create a FormData object
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('rating', rating);
-    formData.append('summary', summary);
+await buildPosterDiv();
+spinnerToggle();
 
-    // Make a POST request using Fetch API
-    fetch('http://localhost:3000/movies', {
-        method: 'POST',
-        body: formData
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Handle successful response, if needed
-            console.log('Movie added successfully:', data);
+async function buildPosterDiv() {
 
-            // Update the movie list after adding a new movie
-            updateMovieList();
-        })
-        .catch(error => {
-            // Handle error
-            console.error('Error adding movie:', error);
-        });
+    let movieDb = await jsonSrvCalls.jsonGetAll();
+
+    // build the posters div
+    let posters = "";
+    for (let movie of movieDb) {
+
+        // <starColor> is a false class - used as id for replace()
+        let cardTemplate =
+        `
+        <div class="card p-0" data-id=${movie.id}>
+           <div id="image-container">
+               <img src=${movie.posterUrl} class="card-img-top" alt="movie poster">
+               <i class="bi bi-info-circle"></i>
+           </div>
+           <div class="card-body p-0 d-flex justify-content-between align-items-center">
+               <button type="button" class="btn btn-sm" id="btnEdit"><i class="bi bi-pencil"></i></button>
+               <i class="bi bi-star-fill <starColor>"></i>
+               <i class="bi bi-star-fill <starColor>"></i>
+               <i class="bi bi-star-fill <starColor>"></i>
+               <i class="bi bi-star-fill <starColor>"></i>
+               <i class="bi bi-star-fill <starColor>"></i>
+               <button type="button" class="btn btn-sm" id="btnDelete"><i class="bi bi-trash"></i></button>
+           </div>
+        </div>
+        `
+
+        // color the rating stars
+        let rating = parseInt(movie.rating);
+        for (let i = 1; i <= rating; i++) {
+            cardTemplate = cardTemplate.replace("<starColor>", 'goldStar');
+        }
+
+        // build html
+        posters += cardTemplate;
+    }
+
+    document.querySelector("#poster-div").innerHTML = posters;
 }
 
-function updateMovieList() {
-    // Make AJAX request to get the updated movie list
-    fetch(' http://localhost:3000/movies')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(movieData => {
-            // Update the displayed movie list
-            displayMovies(movieData);
-        })
-        .catch(error => {
-            // Handle error
-            console.error('Error fetching updated movie data:', error);
-        });
+
+// add poster event delegator
+document.querySelector("#poster-div").addEventListener("click", posterDivEv);
+function posterDivEv(ev) {
+    let clickedArea = ev.target.className;
+
+    let info = clickedArea.includes("info-circle");
+    let pencil = clickedArea.includes("pencil");
+    let trash = clickedArea.includes("trash");
+
+    if (info + pencil + trash > 0) {
+        // which card ?
+        let movieId = ev.target.closest(".card").dataset.id;
+
+        // what action ?
+        info ? posterClicks.clickedInfo(movieId) : null;
+        pencil ? posterClicks.clickedPencil(movieId) : null;
+        trash ? posterClicks.clickedTrash(movieId) : null;
+    }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Display loading message
-    document.getElementById("loading").style.display = "block";
 
-    // Initial AJAX request to get the movie list
-    fetch(' http://localhost:3000/movies')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(movieData => {
-            // Display the initial movie list
-            displayMovies(movieData);
-
-            // Hide loading message
-            document.getElementById("loading").style.display = "none";
-        })
-        .catch(error => {
-            // Handle error
-            console.error('Error fetching initial movie data:', error);
-            document.getElementById("loading").innerHTML = "Error loading data";
-        });
-});
-
-function displayMovies(movieData) {
-    var movieListDiv = document.getElementById("movieList");
-
-    // Clear existing content
-    movieListDiv.innerHTML = "";
-
-    // Loop through each movie in the data
-    movieData.forEach(movie => {
-        // Create a div element for each movie
-        var movieDiv = document.createElement("div");
-        movieDiv.classList.add("movie");
-
-        // Create elements for title, rating, and summary
-        var titleElement = document.createElement("h2");
-        titleElement.textContent = movie.title;
-
-        var ratingElement = document.createElement("p");
-        ratingElement.textContent = "Rating: " + movie.rating;
-
-        var summaryElement = document.createElement("p");
-        summaryElement.textContent = movie.summary;
-
-        // Append elements to the movie div
-        movieDiv.appendChild(titleElement);
-        movieDiv.appendChild(ratingElement);
-        movieDiv.appendChild(summaryElement);
-
-        // Append the movie div to the movieListDiv
-        movieListDiv.appendChild(movieDiv);
-    });
+function spinnerToggle() {
+    document.querySelector(".spinner-border").classList.toggle("hidden");
 }
+
+
+// nav bar 'add movie' button
+document.querySelector("#addMovie").addEventListener("click", movieModal.addMovieBtn);
+
+
+// clean up the fields from the movie modal on close
+document.querySelector("#movieModal").addEventListener("hidden.bs.modal", movieModal.cleanUp);
+
+
+// capture the movie modal stars
+document.querySelector("#modalStars").addEventListener("click", movieModal.modalStarsClick);
+
+
+// modalSaveChanges
+document.querySelector("#modalSaveChanges").addEventListener("click", movieModal.modalSaveChanges);
+
+
+export {buildPosterDiv, spinnerToggle};
