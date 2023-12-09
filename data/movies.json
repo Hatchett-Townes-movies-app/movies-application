@@ -16,10 +16,10 @@
     },
     {
       "id": 3,
-      "posterUrl": "https://image.tmdb.org/t/p/original/bUeiwBQdupBLQthMCHKV7zv56uv.jpg",
       "title": "Training Day",
-      "rating": "4",
-      "movieSummary": "On his first day on the job as a narcotics officer, a rookie cop works with a rogue detective who isn't what he appears."
+      "movieSummary": "On his first day on the job as a narcotics officer, a rookie cop works with a rogue detective who isn't what he appears.",
+      "posterUrl": "https://image.tmdb.org/t/p/original/bUeiwBQdupBLQthMCHKV7zv56uv.jpg",
+      "rating": 2
     },
     {
       "id": 4,
@@ -85,11 +85,11 @@
       "movieSummary": "A man-cub named Mowgli fostered by wolves. After a threat from the tiger Shere Khan, Mowgli is forced to flee the jungle, by which he embarks on a journey of self discovery with the help of the panther, Bagheera and the free-spirited bear, Baloo."
     },
     {
-      "id": 13,
       "title": "The Good, the Bad and the Ugly",
       "movieSummary": "While the Civil War rages on between the Union and the Confederacy, three men – a quiet loner, a ruthless hitman, and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
       "posterUrl": "https://www.themoviedb.org/t/p/w1280/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
-      "rating": 4
+      "rating": 4,
+      "id": 13
     }
   ]
 }

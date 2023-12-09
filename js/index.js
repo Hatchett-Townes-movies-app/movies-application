@@ -1,56 +1,19 @@
 "use strict";
 
 import * as jsonSrvCalls from "./jsonSrvCalls.js";
+import * as displayMovies from "./displayMovies.js";
 import * as posterClicks from "./posterClicks.js";
 import * as movieModal from "./movieModal.js";
 
 
-await buildPosterDiv();
-spinnerToggle();
-
-async function buildPosterDiv() {
-
-    let movieDb = await jsonSrvCalls.jsonGetAll();
-
-    // build the posters div
-    let posters = "";
-    for (let movie of movieDb) {
-
-        // <starColor> is a false class - used as id for replace()
-        let cardTemplate =
-        `
-        <div class="card p-0" data-id=${movie.id}>
-           <div id="image-container">
-               <img src=${movie.posterUrl} class="card-img-top" alt="movie poster">
-               <i class="bi bi-info-circle"></i>
-           </div>
-           <div class="card-body p-0 d-flex justify-content-between align-items-center">
-               <button type="button" class="btn btn-sm" id="btnEdit"><i class="bi bi-pencil"></i></button>
-               <i class="bi bi-star-fill <starColor>"></i>
-               <i class="bi bi-star-fill <starColor>"></i>
-               <i class="bi bi-star-fill <starColor>"></i>
-               <i class="bi bi-star-fill <starColor>"></i>
-               <i class="bi bi-star-fill <starColor>"></i>
-               <button type="button" class="btn btn-sm" id="btnDelete"><i class="bi bi-trash"></i></button>
-           </div>
-        </div>
-        `
-
-        // color the rating stars
-        let rating = parseInt(movie.rating);
-        for (let i = 1; i <= rating; i++) {
-            cardTemplate = cardTemplate.replace("<starColor>", 'goldStar');
-        }
-
-        // build html
-        posters += cardTemplate;
-    }
-
-    document.querySelector("#poster-div").innerHTML = posters;
+// really for init and re-init/dynamic reloads
+async function initSite() {
+    const movieDb = await jsonSrvCalls.jsonGetAll();
+    await displayMovies.buildPosterCards(movieDb);
 }
 
 
-// add poster event delegator
+// add poster div event delegator
 document.querySelector("#poster-div").addEventListener("click", posterDivEv);
 function posterDivEv(ev) {
     let clickedArea = ev.target.className;
@@ -76,20 +39,14 @@ function spinnerToggle() {
 }
 
 
+// crank it up
+await initSite();
+// turn it off
+spinnerToggle();
+
+
 // nav bar 'add movie' button
 document.querySelector("#addMovie").addEventListener("click", movieModal.addMovieBtn);
 
 
-// clean up the fields from the movie modal on close
-document.querySelector("#movieModal").addEventListener("hidden.bs.modal", movieModal.cleanUp);
-
-
-// capture the movie modal stars
-document.querySelector("#modalStars").addEventListener("click", movieModal.modalStarsClick);
-
-
-// modalSaveChanges
-document.querySelector("#modalSaveChanges").addEventListener("click", movieModal.modalSaveChanges);
-
-
-export {buildPosterDiv, spinnerToggle};
+export {initSite, spinnerToggle};
