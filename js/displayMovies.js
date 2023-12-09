@@ -1,12 +1,13 @@
 "use strict";
 
-// import * as index from "./index.js";
+/**
+ *
+ * buildPosterCards()
+ *
+ */
 
-// import * as jsonSrvCalls from "./jsonSrvCalls";
 
 async function buildPosterCards(movieDb) {
-
-    // let movieDb = await jsonSrvCalls.jsonGetAll();
 
     // build the posters div
     let posters = "";
@@ -14,7 +15,7 @@ async function buildPosterCards(movieDb) {
 
         // <starColor> is a false class - used as id for replace()
         let cardTemplate =
-            `
+        `
         <div class="card p-0" data-id=${movie.id}>
            <div id="image-container">
                <img src=${movie.posterUrl} class="card-img-top" alt="movie poster">
@@ -28,6 +29,11 @@ async function buildPosterCards(movieDb) {
                <i class="bi bi-star-fill <starColor>"></i>
                <i class="bi bi-star-fill <starColor>"></i>
                <button type="button" class="btn btn-sm" id="btnDelete"><i class="bi bi-trash"></i></button>
+           </div>
+           <div hidden>
+               <div id="movieTitle">${movie.title}</div>
+               <div id="movieSummary">${movie.movieSummary}</div>
+               <div id="movieRating">${movie.rating}</div>
            </div>
         </div>
         `

@@ -1,49 +1,57 @@
 "use strict";
 
-import * as jsonSrvCalls from "./jsonSrvCalls.js";
+/***
+ * handles either an info, pencil, or trash icon click
+ *
+ * clickedInfo()
+ * clickedPencil()
+ * clickedTrash()
+ *
+ */
+
+
+// movie modal
+const modalEl = document.querySelector("#modalMovie");
 
 
 // TODO: *****
 // info icon
 function clickedInfo(movieId) {
-    console.log(movieId, "info");
-
+    console.log("clickedInfo ", movieId);
 }
 
 
 // pencil icon
 async function clickedPencil(movieId) {
 
-    // get the movie details from the db
-    let urlMovieDb = `http://localhost:3000/movies/${movieId}`;
-    let movie = await jsonSrvCalls.jsonGet(urlMovieDb);
+    // movie html
+    const movieCardEl = document.querySelector(`[data-id="${movieId}"]`);
 
-    // add the movie id to the modal
-    document.querySelector("#movieModal").setAttribute("data-id", movieId)
-
-    // edit the fields
-    document.querySelector("#modalTitle").innerText = "Edit Movie";
-    document.querySelector("#movieTitle").value = movie.title;
-    document.querySelector("#movieSummary").value = movie.movieSummary;
-    document.querySelector("#posterUrl").value = movie.posterUrl;
+    // populate the fields
+    modalEl.querySelector("#modalTitle").innerText = "Edit Movie";
+    modalEl.querySelector("#modalMovieTitle").value = movieCardEl.querySelector("#movieTitle").innerText;
+    modalEl.querySelector("#modalMovieSummary").value = movieCardEl.querySelector("#movieSummary").innerText;
+    modalEl.querySelector("#modalMoviePosterUrl").value = movieCardEl.querySelector("img").src;
 
     // add star rating
-    let starElements= document.querySelector("#modalStars").children;
-    let rating = parseInt(movie.rating);
-    for ( let i= 0; i < rating; i++) {
+    let starElements = document.querySelector("#modalMovieRating").children;
+    let rating =  parseInt(movieCardEl.querySelector("#movieRating").innerText);
+    for (let i = 0; i < rating; i++) {
         starElements[i].classList.add("goldStar");
     }
 
+    // send the movie id to the modal
+    modalEl.dataset.id = movieId;
+
     // call the modal
-    document.querySelector("#movieButton").click();
+    document.querySelector("#modalMovieButton").click();
 }
 
 
 // TODO: *****
 // trash icon
 function clickedTrash(movieId) {
-    console.log(movieId, "trash");
-
+    console.log("clickedTrash ", movieId);
 }
 
 

@@ -54,11 +54,11 @@
 
 
 	<!-- Hidden modal to add / edit movie -->
-	<button type="button" id="movieButton" class="btn d-none" data-bs-toggle="modal" data-bs-target="#movieModal">
+	<button type="button" id="modalMovieButton" class="btn d-none" data-bs-toggle="modal" data-bs-target="#modalMovie">
 		...
 	</button>
 
-	<div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="modalMovie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -66,21 +66,21 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<div id="modalForm">
+					<div id="modalMovieForm">
 					<div class="mb-3">
-						<label for="movieTitle" class="form-label mb-0 ps-1">Title</label>
-						<input type="text" class="form-control" id="movieTitle">
-					</div>
-					<div class="mb-3">
-						<label for="movieSummary" class="form-label mb-0 ps-1">Summary</label>
-						<textarea class="form-control" id="movieSummary" rows="3"></textarea>
+						<label for="modalMovieTitle" class="form-label mb-0 ps-1">Title</label>
+						<input type="text" class="form-control" id="modalMovieTitle">
 					</div>
 					<div class="mb-3">
-						<label for="posterUrl" class="form-label mb-0 ps-1">Url</label>
-						<input type="text" class="form-control" id="posterUrl">
+						<label for="modalMovieSummary" class="form-label mb-0 ps-1">Summary</label>
+						<textarea class="form-control" id="modalMovieSummary" rows="3"></textarea>
+					</div>
+					<div class="mb-3">
+						<label for="modalMoviePosterUrl" class="form-label mb-0 ps-1">Url</label>
+						<input type="text" class="form-control" id="modalMoviePosterUrl">
 					</div>
 					</div>
-					<span class="d-flex justify-content-center" id="modalStars">
+					<span class="d-flex justify-content-center" id="modalMovieRating">
 						<i class="bi bi-star-fill" id="1"></i>
 						<i class="bi bi-star-fill" id="2"></i>
 						<i class="bi bi-star-fill" id="3"></i>

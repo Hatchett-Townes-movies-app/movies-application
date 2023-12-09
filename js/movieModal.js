@@ -1,42 +1,37 @@
 "use strict";
 
+/***
+ * just to handle the movie modal
+ *
+ * addMovieBtn()
+ * removeStarRatings()
+ * cleanUp()
+ * modalStarsClick()
+ * modalSaveChanges()
+ *
+ */
+
 import * as index from "./index.js";
 import * as jsonSrvCalls from "./jsonSrvCalls.js";
-// import * as displayMovies from "./displayMovies.js";
 
 
-// from 'add movie' button in nav bar
-function addMovieBtn(ev) {
-    document.querySelector("#modalTitle").innerText = "Add Movie";
-    document.querySelector("#movieButton").click();
-}
+const modalMovieEl = document.querySelector("#modalMovie");
+const modalMovieButton = document.querySelector("#modalMovieButton");
 
 
-// remove star ratings from modal else it inherits from the previous call
-function removeStarRatings() {
-    let starElements= document.querySelector("#modalStars").children;
-    for (let el of starElements) {
-        el.classList.remove("goldStar");
-    }
-}
-
-
-// reset the fields from modal else it inherits from the previous call
-document.querySelector("#movieModal").addEventListener("hidden.bs.modal", cleanUp);
-function cleanUp() {
-    document.querySelector("#movieTitle").value = "";
-    document.querySelector("#movieSummary").value = "";
-    document.querySelector("#posterUrl").value = "";
-    removeStarRatings();
+// nav bar 'add movie' button
+function addMovieBtn() {
+    modalMovieEl.querySelector("#modalTitle").innerText = "Add Movie";
+    modalMovieButton.click();
 }
 
 
 // what are the star ratings in nums from db and translate it to colored stars
-document.querySelector("#modalStars").addEventListener("click", modalStarsClick);
+modalMovieEl.querySelector("#modalMovieRating").addEventListener("click", modalStarsClick);
 function modalStarsClick(ev) {
     if (ev.target.className.includes("bi-star-fill")) {
         let rating = parseInt(ev.target.id);
-        let starElements= document.querySelector("#modalStars").children;
+        let starElements= modalMovieEl.querySelector("#modalMovieRating").children;
 
         // user can change star ratings within the modal - requires a reset each time
         removeStarRatings();
@@ -45,43 +40,43 @@ function modalStarsClick(ev) {
         for ( let i= 0; i < rating; i++) {
             starElements[i].classList.add("goldStar");
         }
+    } else {
+        removeStarRatings();
     }
 }
 
 
 // modalSaveChanges
-document.querySelector("#modalSaveChanges").addEventListener("click", modalSaveChanges);
+modalMovieEl.querySelector("#modalSaveChanges").addEventListener("click", modalSaveChanges);
 async function modalSaveChanges() {
     // toggle on
     index.spinnerToggle();
 
-    document.querySelector("#modalClose").click();
+    modalMovieEl.querySelector("#modalClose").click();
 
     // count the gold stars
     let starCount = 0;
-    for (let el of document.querySelector("#modalStars").children) {
+    for (let el of modalMovieEl.querySelector("#modalMovieRating").children) {
         if (el.className.includes("goldStar")) {
             starCount++;
         }
     }
 
     // build the object
-    let movieId = document.querySelector("#movieModal").dataset.id;
+    let movieId = modalMovieEl.dataset.id;
     let movieObj = {
         "id": movieId,
-        "title": document.querySelector("#movieTitle").value,
-        "movieSummary": document.querySelector("#movieSummary").value,
-        "posterUrl": document.querySelector("#posterUrl").value,
+        "title": modalMovieEl.querySelector("#modalMovieTitle").value,
+        "movieSummary": modalMovieEl.querySelector("#modalMovieSummary").value,
+        "posterUrl": modalMovieEl.querySelector("#modalMoviePosterUrl").value,
         "rating": starCount,
     }
 
     // send to json server - adding or editing ?
-    let modalTitle = document.querySelector("#modalTitle").innerText;
+    let modalTitle = modalMovieEl.querySelector("#modalTitle").innerText;
     if (modalTitle === "Add Movie") {
-        console.log("adding");
         await jsonSrvCalls.jsonPost(movieObj);
     } else { // "editing"
-        console.log("editing");
         await jsonSrvCalls.jsonPut(movieObj, movieId);
     }
 
@@ -89,6 +84,25 @@ async function modalSaveChanges() {
     await index.initSite();
     // toggle off
     index.spinnerToggle();
+}
+
+
+// reset the fields from modal else it inherits from the previous call
+modalMovieEl.addEventListener("hidden.bs.modal", cleanUp);
+function cleanUp() {
+    modalMovieEl.querySelector("#modalMovieTitle").value = "";
+    modalMovieEl.querySelector("#modalMovieSummary").value = "";
+    modalMovieEl.querySelector("#modalMoviePosterUrl").value = "";
+    removeStarRatings();
+}
+
+
+// remove star ratings from modal else it inherits from the previous call
+function removeStarRatings() {
+    let starElements= modalMovieEl.querySelector("#modalMovieRating").children;
+    for (let el of starElements) {
+        el.classList.remove("goldStar");
+    }
 }
 
 

@@ -1,5 +1,16 @@
 "use strict";
 
+/**
+ *
+ * jsonGetAll()
+ * jsonGet()
+ * jsonPut()
+ * jsonPost()
+ * jsonDelete()
+ *
+ */
+
+
 let urlMovieDb = "http://localhost:3000/movies";
 
 
@@ -72,4 +83,4 @@ async function jsonDelete(movieObj) {
 }
 
 
-export {jsonGetAll, jsonGet, jsonPut, jsonPost};
+export {jsonGetAll, jsonGet, jsonPut, jsonPost, jsonDelete};
