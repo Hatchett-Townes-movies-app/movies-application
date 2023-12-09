@@ -2,6 +2,7 @@
 
 import * as index from "./index.js";
 import * as jsonSrvCalls from "./jsonSrvCalls.js";
+// import * as displayMovies from "./displayMovies.js";
 
 
 // from 'add movie' button in nav bar
@@ -21,6 +22,7 @@ function removeStarRatings() {
 
 
 // reset the fields from modal else it inherits from the previous call
+document.querySelector("#movieModal").addEventListener("hidden.bs.modal", cleanUp);
 function cleanUp() {
     document.querySelector("#movieTitle").value = "";
     document.querySelector("#movieSummary").value = "";
@@ -30,6 +32,7 @@ function cleanUp() {
 
 
 // what are the star ratings in nums from db and translate it to colored stars
+document.querySelector("#modalStars").addEventListener("click", modalStarsClick);
 function modalStarsClick(ev) {
     if (ev.target.className.includes("bi-star-fill")) {
         let rating = parseInt(ev.target.id);
@@ -46,6 +49,8 @@ function modalStarsClick(ev) {
 }
 
 
+// modalSaveChanges
+document.querySelector("#modalSaveChanges").addEventListener("click", modalSaveChanges);
 async function modalSaveChanges() {
     // toggle on
     index.spinnerToggle();
@@ -80,8 +85,8 @@ async function modalSaveChanges() {
         await jsonSrvCalls.jsonPut(movieObj, movieId);
     }
 
-    // changes so rebuild it all
-    await index.buildPosterDiv();
+    // changes so, rebuild it all
+    await index.initSite();
     // toggle off
     index.spinnerToggle();
 }
