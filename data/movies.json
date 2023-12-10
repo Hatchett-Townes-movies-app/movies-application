@@ -79,17 +79,17 @@
     },
     {
       "id": 12,
-      "posterUrl": "https://image.tmdb.org/t/p/original//xIGhgcLtzzTON56G905I5tuwNQM.jpg",
       "title": "The Jungle Book (2016)",
-      "rating": "4",
-      "movieSummary": "A man-cub named Mowgli fostered by wolves. After a threat from the tiger Shere Khan, Mowgli is forced to flee the jungle, by which he embarks on a journey of self discovery with the help of the panther, Bagheera and the free-spirited bear, Baloo."
+      "movieSummary": "A man-cub named Mowgli fostered by wolves. After a threat from the tiger Shere Khan, Mowgli is forced to flee the jungle, by which he embarks on a journey of self discovery with the help of the panther, Bagheera and the free-spirited bear, Baloo.",
+      "posterUrl": "https://image.tmdb.org/t/p/original//xIGhgcLtzzTON56G905I5tuwNQM.jpg",
+      "rating": 3
     },
     {
       "id": 13,
       "title": "The Good, the Bad and the Ugly",
       "movieSummary": "While the Civil War rages on between the Union and the Confederacy, three men – a quiet loner, a ruthless hitman, and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
       "posterUrl": "https://www.themoviedb.org/t/p/w1280/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
-      "rating": 3
+      "rating": 4
     }
   ]
 }
