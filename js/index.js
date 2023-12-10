@@ -13,11 +13,15 @@ import * as jsonSrvCalls from "./jsonSrvCalls.js";
 import * as displayMovies from "./displayMovies.js";
 import * as posterClicks from "./posterClicks.js";
 import * as movieModal from "./movieModal.js";
+import * as searchForm from "./searchForm.js";
+
+
+let movieDb;
 
 
 // really for init and re-init/dynamic reloads
 async function initSite() {
-    const movieDb = await jsonSrvCalls.jsonGetAll();
+    movieDb = await jsonSrvCalls.jsonGetAll();
     await displayMovies.buildPosterCards(movieDb);
 }
 
@@ -59,4 +63,9 @@ spinnerToggle();
 document.querySelector("#addMovie").addEventListener("click", movieModal.addMovieBtn);
 
 
-export {initSite, spinnerToggle};
+// search
+document.querySelector("#searchForm").addEventListener("input", searchForm.search);
+document.querySelector("#searchButton").addEventListener("click", searchForm.search);
+
+
+export {movieDb, initSite, spinnerToggle};
