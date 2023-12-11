@@ -49,6 +49,10 @@ async function buildPosterCards(movieDb) {
     }
 
     document.querySelector("#poster-div").innerHTML = posters;
+
+    // add placeholder text for search form
+    const placeHolderText = `Search the database - ${movieDb.length} titles`
+    document.querySelector("#searchForm").setAttribute("placeholder", placeHolderText);
 }
 
 
