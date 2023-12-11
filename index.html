@@ -19,7 +19,7 @@
 <body>
 
 <!--Nav bar-->
-<nav class="navbar">
+<nav class="navbar sticky-top">
 	<div class="container-fluid">
 		<span class="navbar-brand py-0">E2-MDB</span>
 		<button type="button" class="btn" id="addMovie">Add Movie</button>
@@ -54,6 +54,25 @@
 	</div>
 
 
+	<!-- Hidden modal to display movie info -->
+	<button type="button" id="modalInfoButton" class="btn d-none" data-bs-toggle="modal" data-bs-target="#modalInfo">
+	</button>
+	<div class="modal" id="modalInfo" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<p class="modal-title" id="modalInfoTitle"></p>
+				</div>
+				<div class="modal-body">
+					<p id="modalInfoText"></p>
+				</div>
+				<div class="modal-footer d-flex justify-content-center">
+					<button type="button" class="btn btn-secondary w-100 py-0" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Hidden modal to add / edit movie -->
 	<button type="button" id="modalMovieButton" class="btn d-none" data-bs-toggle="modal" data-bs-target="#modalMovie">
 	</button>
@@ -61,7 +80,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="modalTitle">.....</h1>
+					<h1 class="modal-title fs-5" id="modalTitle"></h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">

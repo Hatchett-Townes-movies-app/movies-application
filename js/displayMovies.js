@@ -18,7 +18,7 @@ async function buildPosterCards(movieDb) {
         `
         <div class="card p-0" data-id=${movie.id}>
            <div id="image-container">
-               <img src=${movie.posterUrl} class="card-img-top" alt="movie poster">
+               <img src=${movie.posterUrl} class="card-img-top" alt="movie poster">                                             
                <i class="bi bi-info-circle"></i>
            </div>
            <div class="card-body p-0 d-flex justify-content-between align-items-center">

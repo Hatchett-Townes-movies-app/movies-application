@@ -35,6 +35,11 @@ body {
 
 /* heading section */
 
+.ssticky {
+    position: sticky;
+    top: 64px; /* Adjust this value based on your needs */
+    z-index: 1020; /* Higher than other elements, but below fixed elements like navbars */
+}
 
 #heading-div {
     position: relative;
@@ -115,6 +120,19 @@ body {
 
 .bi-info-circle:hover {
     cursor: pointer;
+}
+
+#modalInfoTitle {
+    font-family: 'Bebas Neue', sans-serif;
+    color: lightseagreen;
+    letter-spacing: 1px;
+    font-size: 1.75rem;
+}
+
+#modalInfoText {
+    font-family: 'Playfair Display', serif;
+    color: darkblue;
+    font-size: 1.1rem;
 }
 
 #btnEdit {
