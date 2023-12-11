@@ -2,16 +2,45 @@
 
 /**
  *
+ * randomize()
  * buildPosterCards()
  *
  */
 
 
+async function randomize(movieDb) {
+
+    let randomizeArray = [];
+    let maxNum = movieDb.length;
+    let minNum = 0;
+
+    do {
+        let randomNumber =
+            Math.floor(Math.random() * (maxNum - minNum)) + minNum;
+
+        if (!randomizeArray.includes(randomNumber)){
+            randomizeArray.push(randomNumber);
+            // converge on the range
+            randomNumber === minNum ? minNum += +1 : null;
+            randomNumber === maxNum ? maxNum += -1 : null;
+        }
+    } while(randomizeArray.length !==  movieDb.length);
+
+    return randomizeArray;
+}
+
+
 async function buildPosterCards(movieDb) {
+
+    let randomizeArray = await randomize(movieDb);
 
     // build the posters div
     let posters = "";
-    for (let movie of movieDb) {
+    for (let index of randomizeArray) {
+
+        let movie = movieDb[index];
+
+    // for (let movie of movieDb) {
 
         // <starColor> is a false class - used as id for replace()
         let cardTemplate =

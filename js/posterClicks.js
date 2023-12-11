@@ -16,7 +16,6 @@ const modalEl = document.querySelector("#modalMovie");
 
 // info icon
 function clickedInfo(movieId) {
-    console.log("clickedInfo ", movieId);
 
     // card element
     const cardEl = document.querySelector(`[data-id="${movieId}"]`);

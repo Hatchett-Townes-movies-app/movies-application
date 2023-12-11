@@ -90,6 +90,13 @@
       "movieSummary": "While the Civil War rages on between the Union and the Confederacy, three men – a quiet loner, a ruthless hitman, and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
       "posterUrl": "https://www.themoviedb.org/t/p/w1280/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
       "rating": 4
+    },
+    {
+      "title": "Shutter Island",
+      "movieSummary": "World War II soldier-turned-U.S. Marshal Teddy Daniels investigates the disappearance of a patient from a hospital for the criminally insane, but his efforts are compromised by troubling visions and a mysterious doctor.",
+      "posterUrl": "https://www.themoviedb.org/t/p/w1280/4GDy0PHYX3VRXUtwK5ysFbg3kEx.jpg",
+      "rating": 3,
+      "id": 14
     }
   ]
 }
