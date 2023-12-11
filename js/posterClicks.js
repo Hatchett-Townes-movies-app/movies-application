@@ -9,6 +9,8 @@
  *
  */
 
+import * as index from "./index.js";
+import * as jsonSrvCalls from "./jsonSrvCalls.js";
 
 // movie modal
 const modalEl = document.querySelector("#modalMovie");
@@ -58,8 +60,15 @@ async function clickedPencil(movieId) {
 
 // TODO: *****
 // trash icon
-function clickedTrash(movieId) {
+async function clickedTrash(movieId) {
     console.log("clickedTrash ", movieId);
+
+    index.spinnerToggle(); // on
+    await jsonSrvCalls.jsonDelete(movieId);
+    await index.initSite();
+    index.spinnerToggle(); // off
+
+
 }
 
 

@@ -75,11 +75,19 @@ async function jsonPost(movieObj) {
 }
 
 
-// TODO: *****
 // json delete
-async function jsonDelete(movieObj) {
-    console.log("json delete: ", movieObj);
-
+async function jsonDelete(movieId) {
+    let url = `${urlMovieDb}/${movieId}`;
+    try {
+        const options = {
+            method: 'DELETE'
+        };
+        let resp = await fetch(url, options);
+        let deletedMovie = await resp.json();
+        return deletedMovie;
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 
