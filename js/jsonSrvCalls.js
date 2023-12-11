@@ -15,7 +15,7 @@ let urlMovieDb = "http://localhost:3000/movies";
 
 
 // get the whole db by default - init
-async function jsonGetAll(){
+async function jsonGetAll() {
     return await jsonGet(urlMovieDb);
 }
 
@@ -78,36 +78,16 @@ async function jsonPost(movieObj) {
 // json delete
 async function jsonDelete(movieId) {
     let url = `${urlMovieDb}/${movieId}`;
-
-    //
-    recyclingBin(movieId);
-
-    // try {
-    //     const options = {
-    //         method: 'DELETE'
-    //     };
-    //     let resp = await fetch(url, options);
-    //     let deletedMovie = await resp.json();
-    //     return deletedMovie;
-    // } catch (error) {
-    //     console.error(error);
-    // }
-}
-
-
-// recycling bin
-async function recyclingBin(movieId){
-
-    // does the bin exist
-    let binUrl = urlMovieDb+"_bin";
     try {
-        const binTest = await fetch(binUrl);
+        const options = {
+            method: 'DELETE'
+        };
+        let resp = await fetch(url, options);
+        let deletedMovie = await resp.json();
+        return deletedMovie;
     } catch (error) {
-        console.log(error)
+        console.error(error);
     }
-
-
-
 }
 
 export {jsonGetAll, jsonGet, jsonPut, jsonPost, jsonDelete};
