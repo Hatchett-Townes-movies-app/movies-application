@@ -37,10 +37,10 @@
     },
     {
       "id": 6,
-      "posterUrl": "https://image.tmdb.org/t/p/original//h151oRzvsxfKRznEmlQJRlnvsid.jpg",
       "title": "Sing",
-      "rating": "3",
-      "movieSummary": "Coming in on the tail end of a rhythm and blues singing group explosion, The Five Heartbeats rise and fall within the space of seven years. Along the way, the group deals with all manner of fame and fortune distractions jealousy, greed, too much womanizing and drugs all take a toll. Their troubles culminate when executive Big Red is arrested for the murder of manager Jimmy Potter."
+      "movieSummary": "Coming in on the tail end of a rhythm and blues singing group explosion, The Five Heartbeats rise and fall within the space of seven years. Along the way, the group deals with all manner of fame and fortune distractions jealousy, greed, too much womanizing and drugs all take a toll. Their troubles culminate when executive Big Red is arrested for the murder of manager Jimmy Potter.",
+      "posterUrl": "https://image.tmdb.org/t/p/original//h151oRzvsxfKRznEmlQJRlnvsid.jpg",
+      "rating": 2
     },
     {
       "id": 7,
@@ -51,17 +51,17 @@
     },
     {
       "id": 8,
-      "posterUrl": "https://image.tmdb.org/t/p/original//fKe9y1AJHEzoiHwSrjfwyinuCE8.jpg",
       "title": "Rocky",
-      "rating": "3",
-      "movieSummary": "An uneducated collector for a Philadelphia loan shark is given a once-in-a-lifetime opportunity to fight against the world heavyweight boxing champion."
+      "movieSummary": "An uneducated collector for a Philadelphia loan shark is given a once-in-a-lifetime opportunity to fight against the world heavyweight boxing champion.",
+      "posterUrl": "https://image.tmdb.org/t/p/original//fKe9y1AJHEzoiHwSrjfwyinuCE8.jpg",
+      "rating": 4
     },
     {
       "id": 9,
-      "posterUrl": "https://image.tmdb.org/t/p/original//6a2HY6UmD7XiDD3NokgaBAXEsD2.jpg",
       "title": "King Kong",
-      "rating": "1",
-      "movieSummary": "In 1933 New York, an overly ambitious movie producer coerces his cast and hired ship crew to travel to mysterious Skull Island, where they encounter Kong, a giant ape who is immediately smitten with the leading lady."
+      "movieSummary": "In 1933 New York, an overly ambitious movie producer coerces his cast and hired ship crew to travel to mysterious Skull Island, where they encounter Kong, a giant ape who is immediately smitten with the leading lady.",
+      "posterUrl": "https://image.tmdb.org/t/p/original//6a2HY6UmD7XiDD3NokgaBAXEsD2.jpg",
+      "rating": 3
     },
     {
       "id": 10,
@@ -89,14 +89,21 @@
       "title": "The Good, the Bad and the Ugly",
       "movieSummary": "While the Civil War rages on between the Union and the Confederacy, three men – a quiet loner, a ruthless hitman, and a Mexican bandit – comb the American Southwest in search of a strongbox containing $200,000 in stolen gold.",
       "posterUrl": "https://www.themoviedb.org/t/p/w1280/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
-      "rating": 2
+      "rating": 4
     },
     {
+      "id": 14,
       "title": "Shutter Island",
       "movieSummary": "World War II soldier-turned-U.S. Marshal Teddy Daniels investigates the disappearance of a patient from a hospital for the criminally insane, but his efforts are compromised by troubling visions and a mysterious doctor.",
       "posterUrl": "https://www.themoviedb.org/t/p/w1280/4GDy0PHYX3VRXUtwK5ysFbg3kEx.jpg",
+      "rating": 2
+    },
+    {
+      "title": " Interstellar",
+      "movieSummary": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+      "posterUrl": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
       "rating": 3,
-      "id": 14
+      "id": 15
     }
   ]
 }

@@ -58,17 +58,12 @@ async function clickedPencil(movieId) {
 }
 
 
-// TODO: *****
 // trash icon
 async function clickedTrash(movieId) {
-    console.log("clickedTrash ", movieId);
-
     index.spinnerToggle(); // on
     await jsonSrvCalls.jsonDelete(movieId);
     await index.initSite();
     index.spinnerToggle(); // off
-
-
 }
 
 

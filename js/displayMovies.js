@@ -40,14 +40,18 @@ async function buildPosterCards(movieDb) {
 
         let movie = movieDb[index];
 
-    // for (let movie of movieDb) {
+        // quick check for valid url
+        let moviePosterUrl = movie.posterUrl;
+        if (!moviePosterUrl.includes("http")) {
+            moviePosterUrl = "../media/coming-soon.png";
+        }
 
         // <starColor> is a false class - used as id for replace()
         let cardTemplate =
         `
         <div class="card p-0" data-id=${movie.id}>
            <div id="image-container">
-               <img src=${movie.posterUrl} class="card-img-top" alt="movie poster">                                             
+               <img src=${moviePosterUrl} class="card-img-top" alt="movie poster">                                             
                <i class="bi bi-info-circle"></i>
            </div>
            <div class="card-body p-0 d-flex justify-content-between align-items-center">

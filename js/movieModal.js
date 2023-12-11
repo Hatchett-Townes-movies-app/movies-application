@@ -28,16 +28,17 @@ function addMovieBtn() {
 
 // what are the star ratings in nums from db and translate it to colored stars
 modalMovieEl.querySelector("#modalMovieRating").addEventListener("click", modalStarsClick);
+
 function modalStarsClick(ev) {
     if (ev.target.className.includes("bi-star-fill")) {
         let rating = parseInt(ev.target.id);
-        let starElements= modalMovieEl.querySelector("#modalMovieRating").children;
+        let starElements = modalMovieEl.querySelector("#modalMovieRating").children;
 
         // user can change star ratings within the modal - requires a reset each time
         removeStarRatings();
 
         // build the user star selection
-        for ( let i= 0; i < rating; i++) {
+        for (let i = 0; i < rating; i++) {
             starElements[i].classList.add("goldStar");
         }
     } else {
@@ -48,6 +49,7 @@ function modalStarsClick(ev) {
 
 // modalSaveChanges
 modalMovieEl.querySelector("#modalSaveChanges").addEventListener("click", modalSaveChanges);
+
 async function modalSaveChanges() {
     // toggle on
     index.spinnerToggle();
@@ -74,14 +76,21 @@ async function modalSaveChanges() {
 
     // send to json server - adding or editing ?
     let modalTitle = modalMovieEl.querySelector("#modalTitle").innerText;
+    let jsonReturn;
     if (modalTitle === "Add Movie") {
-        await jsonSrvCalls.jsonPost(movieObj);
+        jsonReturn = await jsonSrvCalls.jsonPost(movieObj);
     } else { // "editing"
-        await jsonSrvCalls.jsonPut(movieObj, movieId);
+        jsonReturn = await jsonSrvCalls.jsonPut(movieObj, movieId);
     }
 
     // changes so, rebuild it all
     await index.initSite();
+
+    // move any edit or add as a first element
+    const savedMovieEl = document.querySelector(`[data-id="${jsonReturn.id}"]`);
+    document.querySelector("#poster-div").removeChild(savedMovieEl);
+    document.querySelector("#poster-div").prepend(savedMovieEl);
+
     // toggle off
     index.spinnerToggle();
 }
@@ -89,6 +98,7 @@ async function modalSaveChanges() {
 
 // reset the fields from modal else it inherits from the previous call
 modalMovieEl.addEventListener("hidden.bs.modal", cleanUp);
+
 function cleanUp() {
     modalMovieEl.querySelector("#modalMovieTitle").value = "";
     modalMovieEl.querySelector("#modalMovieSummary").value = "";
@@ -99,11 +109,11 @@ function cleanUp() {
 
 // remove star ratings from modal else it inherits from the previous call
 function removeStarRatings() {
-    let starElements= modalMovieEl.querySelector("#modalMovieRating").children;
+    let starElements = modalMovieEl.querySelector("#modalMovieRating").children;
     for (let el of starElements) {
         el.classList.remove("goldStar");
     }
 }
 
 
-export { addMovieBtn, cleanUp, modalStarsClick, modalSaveChanges};
+export {addMovieBtn, cleanUp, modalStarsClick, modalSaveChanges};
