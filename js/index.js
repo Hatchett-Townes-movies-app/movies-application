@@ -65,7 +65,6 @@ document.querySelector("#addMovie").addEventListener("click", movieModal.addMovi
 
 // search
 document.querySelector("#searchForm").addEventListener("input", searchForm.search);
-document.querySelector("#searchButton").addEventListener("click", searchForm.search);
 
 
 export {movieDb, initSite, spinnerToggle};

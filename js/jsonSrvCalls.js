@@ -78,17 +78,36 @@ async function jsonPost(movieObj) {
 // json delete
 async function jsonDelete(movieId) {
     let url = `${urlMovieDb}/${movieId}`;
-    try {
-        const options = {
-            method: 'DELETE'
-        };
-        let resp = await fetch(url, options);
-        let deletedMovie = await resp.json();
-        return deletedMovie;
-    } catch (error) {
-        console.error(error);
-    }
+
+    //
+    recyclingBin(movieId);
+
+    // try {
+    //     const options = {
+    //         method: 'DELETE'
+    //     };
+    //     let resp = await fetch(url, options);
+    //     let deletedMovie = await resp.json();
+    //     return deletedMovie;
+    // } catch (error) {
+    //     console.error(error);
+    // }
 }
 
+
+// recycling bin
+async function recyclingBin(movieId){
+
+    // does the bin exist
+    let binUrl = urlMovieDb+"_bin";
+    try {
+        const binTest = await fetch(binUrl);
+    } catch (error) {
+        console.log(error)
+    }
+
+
+
+}
 
 export {jsonGetAll, jsonGet, jsonPut, jsonPost, jsonDelete};

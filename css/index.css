@@ -94,7 +94,7 @@ body {
 }
 
 .card {
-    width: 13rem;
+    width: 15rem;
     margin: 0.5rem;
     border-color: darkblue;
     border-width: 1px;
@@ -106,14 +106,14 @@ body {
 }
 
 #image-container img {
-    height: 250px;
+    height: 350px;
     object-fit: cover;
 }
 
 .bi-info-circle {
     position: absolute;
     top: -5px;
-    left: 11rem;
+    left: 13rem;
     color: lightblue;
     font-size: 1.75rem;
 }
