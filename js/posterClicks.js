@@ -14,10 +14,19 @@
 const modalEl = document.querySelector("#modalMovie");
 
 
-// TODO: *****
 // info icon
 function clickedInfo(movieId) {
     console.log("clickedInfo ", movieId);
+
+    // card element
+    const cardEl = document.querySelector(`[data-id="${movieId}"]`);
+    const movieTitle = cardEl.querySelector("#movieTitle").innerText;
+    const movieSummary = cardEl.querySelector("#movieSummary").innerText;
+
+    const modalInfoEl = document.querySelector("#modalInfo");
+    modalInfoEl.querySelector("#modalInfoTitle").innerText = movieTitle;
+    modalInfoEl.querySelector("#modalInfoText").innerText = movieSummary;
+    document.querySelector("#modalInfoButton").click();
 }
 
 
